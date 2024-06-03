@@ -17,6 +17,9 @@
 #include "soc/i2s_reg.h"
 #include "soc/i2s_struct.h"
 #include "soc/io_mux_reg.h"
+#include "soc/gpio_struct.h"	//Added after updating to latest ESP32 Updates May 2024
+#include "soc/gpio_periph.h"	//Added after updating to latest ESP32 Updates May 2024
+#include "rom/gpio.h"			     //Added after updating to latest ESP32 Updates May 2024
 #include "driver/gpio.h"
 #include "driver/periph_ctrl.h"
 #include "rom/lldesc.h"
