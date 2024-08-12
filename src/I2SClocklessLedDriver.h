@@ -66,6 +66,12 @@
 #include "hardwareSprite.h"
 #endif
 
+#ifdef COLOR_ORDER_RGBW
+#define _p_r 0
+#define _p_g 1
+#define _p_b 2
+#define _nb_components 4
+#else
 #ifdef COLOR_ORDER_GRBW
 #define _p_r 1
 #define _p_g 0
@@ -176,6 +182,7 @@ static void IRAM_ATTR loadAndTranspose(I2SClocklessLedDriver * driver);
 
 enum colorarrangment
 {
+    ORDER_RGBW,
     ORDER_GRBW,
     ORDER_RGB,
     ORDER_RBG,
@@ -1039,6 +1046,12 @@ public:
             nb_components = 4;
             p_r = 1;
             p_g = 0;
+            p_b = 2;
+            break;
+        case ORDER_RGBW:
+            nb_components = 4;
+            p_r = 0;
+            p_g = 1;
             p_b = 2;
             break;
         }
